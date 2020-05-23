@@ -44,6 +44,10 @@ class EventDispatcher {
 			}
 		}
 	}
+
+	toString() {
+		return `[class EventDispatcher]`
+	}
 }
 
 export default EventDispatcher
