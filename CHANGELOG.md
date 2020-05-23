@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/untemps/event-dispatcher/compare/v1.0.0...v1.1.0) (2020-05-23)
+
+
+### Features
+
+* Add toString method ([aaebb56](https://github.com/untemps/event-dispatcher/commit/aaebb567740f89c008f10de68553063aa3b8e471))
+
 # 1.0.0 (2020-05-23)
 
 
