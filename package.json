@@ -29,7 +29,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "pretty-quick --staged"
+			"pre-commit": "yarn test:ci && yarn prettier"
 		}
 	},
 	"release": {
@@ -48,6 +48,6 @@
 		"test": "jest -u --watch",
 		"test:ci": "CI=true jest -u -b",
 		"build": "parcel build src/index.js",
-		"prettier": "yarn prettier --write src/index.js"
+		"prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write"
 	}
 }
