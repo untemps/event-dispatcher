@@ -1,0 +1,53 @@
+{
+	"name": "@untemps/event-dispatcher",
+	"version": "0.0.0",
+	"description": "Abstract EventDispatcher class",
+	"main": "dist/index.js",
+	"repository": "git@github.com:untemps/event-dispatcher.git",
+	"keywords": [
+		"event",
+		"dispatch",
+		"class",
+		"javascript"
+	],
+	"author": "Vincent Le Badezet <v.lebadezet@untemps.net>",
+	"license": "MIT",
+	"private": false,
+	"devDependencies": {
+		"@babel/core": "^7.9.6",
+		"@babel/plugin-proposal-class-properties": "^7.8.3",
+		"@babel/preset-env": "^7.9.6",
+		"@semantic-release/changelog": "^5.0.1",
+		"@semantic-release/git": "^9.0.0",
+		"babel-jest": "^26.0.1",
+		"husky": "^4.2.5",
+		"jest": "^26.0.1",
+		"parcel-bundler": "^1.12.4",
+		"prettier": "^2.0.5",
+		"pretty-quick": "^2.0.1",
+		"semantic-release": "^17.0.7"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"release": {
+		"branches": [
+			"master"
+		],
+		"plugins": [
+			"@semantic-release/commit-analyzer",
+			"@semantic-release/release-notes-generator",
+			"@semantic-release/npm",
+			"@semantic-release/changelog",
+			"@semantic-release/git"
+		]
+	},
+	"scripts": {
+		"test": "jest -u --watch",
+		"test:ci": "CI=true jest -u -b",
+		"build": "parcel build src/index.js",
+		"prettier": "yarn prettier --write src/index.js"
+	}
+}
