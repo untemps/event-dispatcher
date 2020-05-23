@@ -2,6 +2,8 @@
 
 Abstract class that allows to internally dispatch events and attach subscribers to listen for them.
 
+![.github/workflows/index.yml](https://github.com/untemps/event-dispatcher/workflows/.github/workflows/index.yml/badge.svg?branch=master)
+
 ## Installation
 
 ```bash
@@ -64,6 +66,5 @@ myFoo.cleanup()
 
 ## Todos
 
--   Publish package to npm
 -   Add examples
 -   Rewrite with TypeScript
