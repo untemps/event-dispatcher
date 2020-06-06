@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/untemps/event-dispatcher/compare/v1.1.0...v1.1.1) (2020-06-06)
+
+
+### Bug Fixes
+
+* Replace Parcel by Rollup to build the package ([5585246](https://github.com/untemps/event-dispatcher/commit/5585246aa867ecfd0038ec536b3a9a7961b10c7f))
+
 # [1.1.0](https://github.com/untemps/event-dispatcher/compare/v1.0.0...v1.1.0) (2020-05-23)
 
 
