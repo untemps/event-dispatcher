@@ -2,7 +2,9 @@
 
 Abstract class that allows to internally dispatch events and attach subscribers to listen for them.
 
-![.github/workflows/index.yml](https://github.com/untemps/event-dispatcher/workflows/.github/workflows/index.yml/badge.svg?branch=master)
+![npm](https://img.shields.io/npm/v/@untemps/event-dispatcher?style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/untemps/event-dispatcher/deploy?style=for-the-badge)
+![Codecov](https://img.shields.io/codecov/c/github/untemps/event-dispatcher?style=for-the-badge)
 
 ## Installation
 
