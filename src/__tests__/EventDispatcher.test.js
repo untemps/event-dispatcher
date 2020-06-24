@@ -59,6 +59,56 @@ describe('EventDispatcher', () => {
 		expect(handler).toHaveBeenCalledTimes(3)
 	})
 
+	describe('`once` option', () => {
+		it('should trigger multiple events if `once` option as been set to false', () => {
+			const event = new Event('foo')
+
+			instance.addEventListener('foo', handler, { once: false })
+
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+
+			expect(handler).toHaveBeenCalledTimes(3)
+		})
+
+		it('should trigger single event if `once` option as been set to true', () => {
+			const event = new Event('foo')
+
+			instance.addEventListener('foo', handler, { once: true })
+
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+
+			expect(handler).toHaveBeenCalledTimes(1)
+		})
+
+		it('should trigger single event if `once` option as been set to whatever false-converted', () => {
+			const event = new Event('foo')
+
+			instance.addEventListener('foo', handler, { once: 0 })
+
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+
+			expect(handler).toHaveBeenCalledTimes(3)
+		})
+
+		it('should trigger single event if `once` option as been set to whatever true-converted', () => {
+			const event = new Event('foo')
+
+			instance.addEventListener('foo', handler, { once: 'foo' })
+
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+			instance.dispatchEvent(event)
+
+			expect(handler).toHaveBeenCalledTimes(1)
+		})
+	})
+
 	it('should trigger single event if several subscriptions have been added for the same handler', () => {
 		const event = new Event('foo')
 
@@ -91,6 +141,7 @@ describe('EventDispatcher', () => {
 		instance.addEventListener('foo', handler)
 
 		instance.removeEventListener('foo', handler)
+		instance.removeEventListener('bar', handler)
 
 		instance.dispatchEvent(event)
 		expect(handler).not.toHaveBeenCalled()
@@ -107,6 +158,7 @@ describe('EventDispatcher', () => {
 		instance.addEventListener('bar', barHandler2)
 
 		instance.clearType('bar')
+		instance.clearType('gag')
 
 		instance.dispatchEvent(fooEvent)
 		expect(handler).toHaveBeenCalled()
