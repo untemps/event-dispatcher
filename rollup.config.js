@@ -30,7 +30,7 @@ export default {
 		commonjs(),
 		filesize(),
 		production && terser(),
-		visualizer({
+		!process.env.CI && visualizer({
 			sourcemap: true,
 			open: true
 		})
